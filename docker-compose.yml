@@ -3,4 +3,6 @@ services:
   backend:
     build: .
     volumes:
-      - './backend:/var/www'
+      - './backend:/var/www/chat'
+  helloworld-express-nodejs:
+    image: obinna/helloworld-express-nodejs
