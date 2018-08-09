@@ -7,5 +7,4 @@ app.get('/', function (req, res) {
 
 app.listen(8081, function () {
   console.log('Server started... \nListening on port 8081!');
-  console.log('To access it using a browser, go to http://localhost:8081')
 });

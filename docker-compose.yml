@@ -4,5 +4,5 @@ services:
     build: .
     volumes:
       - './backend:/var/www/chat'
-  helloworld-express-nodejs:
-    image: obinna/helloworld-express-nodejs
+    ports:
+      - '8080:8081'

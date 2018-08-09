@@ -1,31 +1,19 @@
-# FROM ubuntu:16.04
+FROM node:8
 
-# RUN apt-get update && apt-get -y upgrade
+#define a work directory
+WORKDIR /app
 
-# RUN mkdir -p /usr/src/chat
-# WORKDIR /usr/src/chat
+#copy package.json to working directory
+COPY ./backend/package.json /app
 
-# COPY ./backend ./usr/src/chat
-
-# RUN apt-get install npm -y
-# RUN npm install express --save
-# RUN npm install forever -g
-
-# RUN apt-get install curl -y
-# RUN curl -sL https://deb.nodesource.com/setup_8.x
-# RUN apt-get install -y nodejs
-
-# RUN forever start server.js
-
-
-FROM node:8-alpine
-
-WORKDIR /var/www/chat
-COPY ./backend/package.json var/www/chat
-
+#run npm install
 RUN npm install
-RUN npm install express --save
-COPY . /var/www/chat
 
+#copy server.js to working directory
+COPY ./backend/server.js /app
+
+#run server.js
 CMD node server.js
+
+#change listening port
 EXPOSE 8081
