@@ -1,16 +1,16 @@
 version: '3'
 services:
-  mychat:
-    build: .
-<<<<<<< Updated upstream
+  backend:
+    build: 
+      context: ./
+      dockerfile: back.dockerfile
     ports:
       - '8080:8081'
-=======
-    volumes:
-      - './Backend:/var/backend'
-    command:
-      - npm
-      - start
+  frondend:
+    build:
+      context: ./
+      dockerfile: front.dockerfile
     ports:
-      - '3000:3000'
->>>>>>> Stashed changes
+      - '8000:80'
+    volumes:
+      - './frontend/:/usr/share/nginx/html'

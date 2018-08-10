@@ -1,4 +1,3 @@
-<<<<<<< Updated upstream
 FROM node:8
 
 #get updates and upgrade system
@@ -22,16 +21,3 @@ CMD forever server.js
 
 #change listening port
 EXPOSE 8081
-=======
-FROM ubuntu:16.04
-
-RUN apt-get update -y
-RUN apt-get install npm -y
-RUN apt-get install curl -y
-RUN curl -sL https://deb.nodesource.com/setup_10.x 
-RUN apt-get install nodejs-legacy
-RUN npm install forever -g
-RUN mkdir -p /var/backend
-
-WORKDIR /var/backend
->>>>>>> Stashed changes
