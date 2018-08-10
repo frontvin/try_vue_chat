@@ -13,10 +13,11 @@ WORKDIR /app
 COPY ./backend/ /app
 
 #run npm install
-RUN npm install
+RUN npm install 
+RUN npm install forever -g
 
 #run server.js
-CMD node server.js
+CMD forever server.js
 
 #change listening port
 EXPOSE 8081
