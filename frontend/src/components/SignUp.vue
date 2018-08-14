@@ -1,0 +1,26 @@
+<template>
+    <div id="signCont">
+        <h4>Login</h4>
+        <input v-model="nickname" placeholder="Enter your nickname">
+        <button v-on:click="signUp"> Let me in. </button>
+    </div>
+</template>
+
+<script>
+export default {
+    data() { return {
+        nickname: ''}
+        },
+        methods: {
+            signUp: function (){
+                localStorage.setItem('nickname', JSON.stringify(this.nickname));
+                }
+        }
+} 
+</script>
+
+<style>
+    @import '../css/app.css';
+</style>
+
+
