@@ -14,6 +14,7 @@ export default {
         methods: {
             signUp: function (){
                 localStorage.setItem('nickname', JSON.stringify(this.nickname));
+                this.$router.push('/chat');
                 }
         }
 } 
