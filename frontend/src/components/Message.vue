@@ -1,6 +1,8 @@
 <template>
-    <div class="message">
-        <p v-for="message in receivedMessages"> {{message}}</p>
+    <div class="messages">
+        <div class="messWrap" v-for="message in receivedMessages">
+            <p>{{message}}</p>
+        </div>
     </div>
 </template>
 

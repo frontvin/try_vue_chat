@@ -133,3 +133,18 @@ footer {
 	position:relative;
 	top:1px;
 }
+
+.messages{
+  float: right;
+}
+
+.messWrap{
+  background-color: #449f47;
+  text-align: center;
+  color: white;
+  border-radius: 5%;
+}
+
+.messWrap p{
+  padding:25%;
+}
