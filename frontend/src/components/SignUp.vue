@@ -1,8 +1,10 @@
 <template>
-    <div id="signCont">
-        <h4>Login</h4>
-        <input v-model="nickname" placeholder="Enter your nickname">
-        <button v-on:click="signUp"> Let me in. </button>
+    <div id="SignUp">
+        <div id="signCont">
+            <h4>Login</h4>
+            <input v-model="nickname" placeholder="Enter your nickname">
+            <button v-on:click="signUp"> Let me in. </button>
+        </div>
     </div>
 </template>
 
@@ -14,8 +16,10 @@ export default {
         methods: {
             signUp: function (){
                 localStorage.setItem('nickname', JSON.stringify(this.nickname));
-                this.$router.push('/chat');
+                if(this.nickname!==''){
+                    this.$router.push('/chat');
                 }
+            }
         }
 } 
 </script>
