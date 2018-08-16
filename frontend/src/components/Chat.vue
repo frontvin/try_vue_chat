@@ -11,7 +11,7 @@
         <footer>
             <div id="sendMsg">
                 <input type='text' placeholder="Enter your message" v-model="message">
-                <button id="sendBtn" v-on:click="sendMessage"> Send </button>
+                <button id="sendBtn" type='submit' v-on:click="sendMessage"> Send </button>
             </div>
         </footer>
     </div>
@@ -30,8 +30,12 @@ export default {
             message
         },
         methods:{
-            sendMessage: function(){
-                this.messages.push(this.message);
+            sendMessage: function(e){
+                if(this.message!==''){
+                    this.messages.push(this.message);
+                    e.preventDefault()
+                    this.$data.message = ""
+                }
             }
         }
     } 

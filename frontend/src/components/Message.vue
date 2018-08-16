@@ -1,8 +1,7 @@
 <template>
     <div class="messages">
-        <div class="messWrap" v-for="message in receivedMessages">
-            <p>{{message}}</p>
-        </div>
+
+            <p class="messWrap" v-for="message in receivedMessages" :key="message.id">{{message}}</p>
     </div>
 </template>
 

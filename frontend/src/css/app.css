@@ -134,17 +134,22 @@ footer {
 	top:1px;
 }
 
+/* messages styles */
 .messages{
-  float: right;
+  overflow-y: scroll;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
 }
 
-.messWrap{
-  background-color: #449f47;
-  text-align: center;
+.messWrap{ 
+  max-width: 42%;
+  font: normal 25px/normal "Courier New", Courier, monospace;
+  margin: 1%;
+  padding: 0.5%;
+  border: 2px solid #2196F3;
+  border-radius: 5px;
   color: white;
-  border-radius: 5%;
-}
-
-.messWrap p{
-  padding:25%;
+  background-color: #2196F3;
+  word-wrap: break-word;
 }
