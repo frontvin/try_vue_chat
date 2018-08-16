@@ -1,7 +1,10 @@
 <template>
     <div class="messages">
-
-            <p class="messWrap" v-for="message in receivedMessages" :key="message.id">{{message}}</p>
+        <div class="messWrap" v-for="message in receivedMessages" :key="message.id">
+            <p>{{message.message}}</p>
+            <p>{{message.nickname}}</p>
+        </div>
+        
     </div>
 </template>
 
@@ -11,7 +14,7 @@ export default {
         
        }        
     },
-    props: ['receivedMessages']
+    props: ['receivedMessages'],
 }
 </script>
 

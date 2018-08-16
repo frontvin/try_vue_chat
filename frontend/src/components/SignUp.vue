@@ -15,7 +15,7 @@ export default {
         },
         methods: {
             signUp: function (){
-                localStorage.setItem('nickname', JSON.stringify(this.nickname));
+                localStorage.setItem('nickname', this.nickname);
                 if(this.nickname!==''){
                     this.$router.push('/chat');
                 }

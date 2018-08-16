@@ -6,7 +6,7 @@
             </div>
         </header>
 
-        <message v-bind:receivedMessages='messages'></message>
+        <message v-bind:receivedMessages='objMessage'></message>
 
         <footer>
             <div id="sendMsg">
@@ -20,21 +20,29 @@
 <script>
 import message from './Message.vue';
 
+class Message {
+    constructor(message, nickname) {
+        this.message = message;
+        this.nickname = nickname;
+        //this.time = new Date();
+    }
+}
+
 export default {
     data() { return{
         message: '',
-        messages: []
+        nickname: localStorage.getItem('nickname').toString(),
+        objMessage: []
         }
     },
         components: {
             message
         },
         methods:{
-            sendMessage: function(e){
+            sendMessage: function(){
                 if(this.message!==''){
-                    this.messages.push(this.message);
-                    e.preventDefault()
-                    this.$data.message = ""
+                    this.objMessage.push(new Message(this.message, this.nickname));
+                    this.message=''
                 }
             }
         }
