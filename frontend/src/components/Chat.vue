@@ -19,20 +19,21 @@
 
 <script>
 import message from './Message.vue';
+import moment from 'moment'
 
 class Message {
-    constructor(message, nickname) {
+    constructor(message, nickname, time) {
         this.message = message;
         this.nickname = nickname;
-        //this.time = new Date();
+        this.time = moment().format('LTS');
     }
 }
 
 export default {
     data() { return{
         message: '',
-        nickname: localStorage.getItem('nickname').toString(),
-        objMessage: []
+        nickname: localStorage.getItem('nickname'),
+        objMessage: [],
         }
     },
         components: {
@@ -40,8 +41,10 @@ export default {
         },
         methods:{
             sendMessage: function(){
+                
                 if(this.message!==''){
-                    this.objMessage.push(new Message(this.message, this.nickname));
+                    this.objMessage.push(new Message(this.message, this.nickname, this.time));
+                    
                     this.message=''
                 }
             }

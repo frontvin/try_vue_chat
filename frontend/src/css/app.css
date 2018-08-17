@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Roboto:300);
+@import url(https://fonts.googleapis.com/css?family=Lato:400,700);
 
 /* Chat auth styles */
 #SignUp{
@@ -137,13 +137,24 @@ footer {
 }
 
 .messWrap{ 
-  max-width: 42%;
-  font: normal 25px/normal "Courier New", Courier, monospace;
+  max-width: 100%;
+  font: normal 14px/normal "Courier New", Courier, monospace;
   margin: 1%;
-  padding: 0.5%;
-  border: 2px solid #2196F3;
-  border-radius: 5px;
+  padding: 0.5% 5%;
+  border: 2px solid #0b74c7;
+  border-radius: 10px;
   color: white;
   background-color: #2196F3;
   word-wrap: break-word;
+}
+
+.userInfo p{
+  text-align: right;
+  padding: 0 5%;
+  font-size: 20px;
+}
+
+.time{
+  font-size: 11px;
+  color: grey;
 }
