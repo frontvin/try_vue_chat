@@ -19,7 +19,8 @@
 
 <script>
 import message from './Message.vue';
-import moment from 'moment'
+import moment from 'moment';
+import io from 'socket.io-client';
 
 class Message {
     constructor(message, nickname, time) {
@@ -34,6 +35,7 @@ export default {
         message: '',
         nickname: localStorage.getItem('nickname'),
         objMessage: [],
+        socket: io('172.30.0.3:8081')
         }
     },
         components: {
@@ -43,11 +45,22 @@ export default {
             sendMessage: function(){
                 
                 if(this.message!==''){
-                    this.objMessage.push(new Message(this.message, this.nickname, this.time));
+                    this.socket.emit('SEND_MESSAGE', {
+                        nickname: this.nickname,
+                        message: this.message,
+                        time: this.time
+                    });
+
+                    // this.objMessage.push(new Message(this.message, this.nickname, this.time));
                     
-                    this.message=''
+                    this.message='';
                 }
             }
+        },
+        mounted() {
+            this.socket.on('MESSAGE', function(msg){
+                this.objMessage.push(new Message(this.message, this.nickname, this.time));
+            });
         }
     } 
 </script>

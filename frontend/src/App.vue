@@ -5,15 +5,13 @@
 </template>
 
 <script>
-import io from 'socket.io-client';
+// import io from 'socket.io-client';
 
-// window.socket = io('http://172.30.0.2:8081')
+// window.socket = io('http://172.30.0.3:8081');
 
 export default {
   name: 'App',
 }
 </script>
 
-<style>
-
-</style>
+<style></style>
