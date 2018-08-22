@@ -16,7 +16,7 @@ WORKDIR /app
 RUN npm install 
 RUN npm install forever -g
 
-#run server.js
+#run server.j
 #CMD forever server.js
 
 #change listening port
