@@ -35,7 +35,7 @@ export default {
         message: '',
         nickname: localStorage.getItem('nickname'),
         objMessage: [],
-        socket: io('172.30.0.3:8081')
+        socket: io('backend')
         }
     },
         components: {

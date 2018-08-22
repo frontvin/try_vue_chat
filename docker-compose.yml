@@ -5,7 +5,10 @@ services:
       context: ./
       dockerfile: back.dockerfile
     ports:
-      - '8080:8081'
+      - '8082:80'
+    volumes:
+      - '/home/student/Vadim/chat-bombyk/backend:/app'
+    command: ["forever", "server.js"]
   frondend:
     build:
       context: ./
@@ -14,3 +17,5 @@ services:
       - '8000:80'
     volumes:
       - './frontend/:/data/www'
+    depends_on:
+      - backend

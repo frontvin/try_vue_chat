@@ -10,14 +10,14 @@ RUN apt-get install nano
 WORKDIR /app
 
 #copy all from backend directory to working directory
-COPY ./backend/ /app
+#COPY ./backend/ /app
 
 #run npm install
 RUN npm install 
 RUN npm install forever -g
 
 #run server.js
-CMD forever server.js
+#CMD forever server.js
 
 #change listening port
-EXPOSE 8081
+EXPOSE 80
